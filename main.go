@@ -20,17 +20,17 @@ func main() {
 	Validate(*search, "search key cannot be empty")
 
 	bga := NewBoardGameAtlas(*clientId)
-	payload, err := bga.search(*search, *limit, *skip)
+	results, err := bga.search(*search, *limit, *skip)
 	if err != nil {
 		log.Fatalln(err)
 	}
 
 	switch *output {
 	case "text":
-		PrintText(&payload.Games)
+		PrintText(&results.Games)
 	case "json":
-		PrintJson(&payload.Games)
+		PrintJson(&results.Games)
 	default:
-		PrintText(&payload.Games)
+		PrintText(&results.Games)
 	}
 }
