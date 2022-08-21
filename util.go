@@ -12,8 +12,8 @@ func Print(v ...interface{}) {
 	fmt.Printf("\n")
 }
 
-func Validate(item string, errmsg string) {
+func Validate(item string, err string) {
 	if item == "" {
-		log.Panicln(errmsg)
+		log.Panicln(err)
 	}
 }
