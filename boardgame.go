@@ -62,8 +62,8 @@ func PrintText(games *[]Game) {
 	titleDecorator := color.New(color.Bold).Add(color.BgGreen).Add(color.FgHiYellow).SprintFunc()
 	descDecorator := color.New(color.Italic).Add(color.BgHiBlack).Add(color.FgHiWhite).SprintFunc()
 	for _, game := range *games {
-		fmt.Printf("Title: %v \n", titleDecorator(game.Name))
-		fmt.Printf("Description: %v \n", descDecorator(game.Description))
+		fmt.Printf(titleDecorator(fmt.Sprintf("Title: %v \n", game.Name)))
+		fmt.Printf("%v %v \n\n", titleDecorator("Description: "), descDecorator(game.Description))
 	}
 }
 
